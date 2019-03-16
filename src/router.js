@@ -50,6 +50,16 @@ export default new Router({
                     path: 'getter',
                     name: 'Getter',
                     component: () => import('./views/vuexlearn/Getter.vue')
+                },
+                {
+                    path: 'mutations',
+                    name: 'Mutations',
+                    component: () => import('./views/vuexlearn/Mutations.vue')
+                },
+                {
+                    path: 'action',
+                    name: 'Action',
+                    component: () => import('./views/vuexlearn/Action.vue')
                 }
             ]
         }

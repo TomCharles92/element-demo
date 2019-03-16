@@ -11,11 +11,6 @@ export default new Vuex.Store({
             {id: 2, text: '事件2', done: false}
         ]
     },
-    mutations: {
-        increment(state) {
-            state.count++
-        }
-    },
     getters: {
         doneTodos: state => {
             return state.todos.filter(todo => todo.done)
@@ -34,5 +29,23 @@ export default new Vuex.Store({
             }
         }
     },
-    actions: {}
+    // 每个mutations的第一个参数必须是state, 第二个参数称为payload载荷
+    mutations: {
+        increment(state) {
+            state.count++
+        },
+        incrementBy(state, payload) {
+            state.count += payload.amount
+        }
+    },
+    // Action 函数接受一个与 store 实例具有相同方法和属性的 context 对象，但并不是同一个
+    actions: {
+        increment(context) {
+            context.commit('increment')
+        },
+        // 用参数解构 argument destructuring 来简化
+        increment2({ commit }) {
+            commit('increment')
+        }
+    }
 })

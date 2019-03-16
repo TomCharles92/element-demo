@@ -13,6 +13,8 @@
             <template slot="title">VuexLearn</template>
             <el-menu-item index="/vuexlearn/state">State</el-menu-item>
             <el-menu-item index="/vuexlearn/getter">Getter</el-menu-item>
+            <el-menu-item index="/vuexlearn/Mutations">Mutations</el-menu-item>
+            <el-menu-item index="/vuexlearn/Action">Action</el-menu-item>
         </el-submenu>
     </el-menu>
 </template>
