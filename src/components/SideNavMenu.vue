@@ -19,7 +19,7 @@
         <el-submenu index="/router">
             <template slot="title">Router</template>
             <el-menu-item index="/router">UserPost</el-menu-item>
-            <el-menu-item index="/router/userprofile" :disabled="true">UserProfile</el-menu-item>
+            <el-menu-item index="/router/userprofile">UserProfile</el-menu-item>
         </el-submenu>
     </el-menu>
 </template>
