@@ -22,6 +22,11 @@ export default new Router({
           component: () => import('./views/workbench/Form.vue')
         },
         {
+          path: 'table',
+          name: '表格',
+          component: () => import('./views/workbench/Table.vue')
+        },
+        {
           path: 'vuex-test',
           name: 'vuex',
           component: () => import('./views/workbench/VuexTest.vue')

@@ -9,7 +9,7 @@
         </el-menu-item>
       </el-submenu>
       
-      <el-menu-item v-else :index="item.path"></el-menu-item>
+      <el-menu-item v-else :index="item.path">{{ item.name }}</el-menu-item>
     </template>
   
   </el-menu>

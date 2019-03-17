@@ -1,10 +1,10 @@
 <template>
     <div id="app">
         <el-row type="flex" justify="end">
-            <el-col :span="4" class="side">
+            <el-col :span="5" class="side">
                 <SideNavMenu></SideNavMenu>
             </el-col>
-            <el-col :span="20" class="main">
+            <el-col :span="19" class="main">
                 <router-view></router-view>
             </el-col>
         </el-row>
