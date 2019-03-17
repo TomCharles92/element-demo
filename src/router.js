@@ -12,14 +12,6 @@ export default new Router({
             component: Home
         },
         {
-            path: '/about',
-            name: 'about',
-            // route level code-splitting
-            // this generates a separate chunk (about.[hash].js) for this route
-            // which is lazy-loaded when the route is visited.
-            component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
-        },
-        {
             path: '/workbench',
             name: '我的工作台',
             component: () => import('./views/workbench/Workbench.vue'),
@@ -62,6 +54,24 @@ export default new Router({
                     component: () => import('./views/vuexlearn/Action.vue')
                 }
             ]
+        },
+        {
+            path: '/router',
+            name: 'Router',
+            component: () => import('./views/router/Router.vue'),
+            children: [
+                {
+                    path: '', // 当/router时，会渲染 UserPost 组件
+                    name: 'UserPost',
+                    component: () => import('./views/router/UserPost.vue')
+                },
+                {
+                    path: 'userprofile',
+                    name: 'UserProfile',
+                    component: () => import('./views/router/UserProfile.vue')
+                }
+            ]
+
         }
     ]
 })

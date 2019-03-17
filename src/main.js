@@ -4,11 +4,15 @@ import './plugins/element.js'
 import './assets/common.less'
 import router from './router'
 import store from './store'
+import axios from 'axios'
+
+Vue.prototype.$axios = axios
+axios.defaults.baseURL = '/zhihu'
 
 Vue.config.productionTip = false
 
 new Vue({
-    router,
+    router, // 将路由挂载到根实例上
     store,
     render: h => h(App)
 }).$mount('#app')
