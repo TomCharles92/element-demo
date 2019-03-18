@@ -17,17 +17,17 @@ export default new Router({
       component: () => import('./views/workbench/Workbench.vue'),
       children: [
         {
-          path: 'form',
+          path: '/form',
           name: '表单',
           component: () => import('./views/workbench/Form.vue')
         },
         {
-          path: 'table',
+          path: '/table',
           name: '表格',
           component: () => import('./views/workbench/Table.vue')
         },
         {
-          path: 'vuex-test',
+          path: '/vuex-test',
           name: 'vuex',
           component: () => import('./views/workbench/VuexTest.vue')
         }
@@ -39,22 +39,22 @@ export default new Router({
       component: () => import('./views/vuexlearn/VuexLearn.vue'),
       children: [
         {
-          path: 'state',
+          path: '/state',
           name: 'state',
           component: () => import('./views/vuexlearn/State.vue')
         },
         {
-          path: 'getter',
+          path: '/getter',
           name: 'Getter',
           component: () => import('./views/vuexlearn/Getter.vue')
         },
         {
-          path: 'mutations',
+          path: '/mutations',
           name: 'Mutations',
           component: () => import('./views/vuexlearn/Mutations.vue')
         },
         {
-          path: 'action',
+          path: '/action',
           name: 'Action',
           component: () => import('./views/vuexlearn/Action.vue')
         }
@@ -66,12 +66,12 @@ export default new Router({
       component: () => import('./views/router/Router.vue'),
       children: [
         {
-          path: '', // 当/router时，会渲染 UserPost 组件
+          path: '/userpost', // 当/router时，会渲染 UserPost 组件
           name: 'UserPost',
           component: () => import('./views/router/UserPost.vue')
         },
         {
-          path: 'userprofile',
+          path: '/userprofile',
           name: 'UserProfile',
           component: () => import('./views/router/UserProfile.vue')
         }
