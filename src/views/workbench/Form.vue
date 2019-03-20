@@ -6,7 +6,7 @@
                 <el-input v-model="ruleForm.name"></el-input>
             </el-form-item>
             <el-form-item label="校验数字" prop="num">
-                <el-input v-model="ruleForm.num"></el-input>
+                <el-input type="number" v-model.number="ruleForm.num"></el-input>
             </el-form-item>
             <el-form-item label="活动区域" prop="region">
                 <el-select v-model="ruleForm.region" placeholder="请选择活动区域">
@@ -50,8 +50,14 @@
                 <el-input type="textarea" v-model="ruleForm.desc"></el-input>
             </el-form-item>
             <el-form-item>
-                <el-button type="primary" @click="submitForm('ruleForm')">立即创建</el-button>
+                <el-button type="primary" @click="submitForm">立即创建</el-button>
                 <el-button @click="resetForm('ruleForm')">重置</el-button>
+            </el-form-item>
+        </el-form>
+
+        <el-form el-form :model="ruleForm" :rules="rules" ref="ruleForm2" label-width="100px" class="demo-ruleForm">
+            <el-form-item label="产品名称" prop="productName">
+                <el-input v-model="ruleForm.productName"></el-input>
             </el-form-item>
         </el-form>
     </div>
@@ -61,6 +67,22 @@
     export default {
         name: "Form",
         data() {
+            let ckeckNumber = (rule, value, callback) => {
+                if (!value) {
+                return callback(new Error('不能为空'));
+                }
+                // setTimeout(() => {
+                // if (!Number.isInteger(value)) {
+                //     callback(new Error('请输入数字值'));
+                // } else {
+                //     if (value < 18) {
+                //     callback(new Error('必须年满18岁'));
+                //     } else {
+                //     callback();
+                //     }
+                // }
+                // }, 1000);
+            };
             return {
                 ruleForm: {
                     name: '',
@@ -71,7 +93,8 @@
                     delivery: false,
                     type: [],
                     resource: '',
-                    desc: ''
+                    desc: '',
+                    productName: ''
                 },
                 rules: {
                     name: [
@@ -79,7 +102,9 @@
                         {min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur'}
                     ],
                     num: [
-                        {type: 'float', required: true, message: '请输入数字'}
+                        {required: true, message: '请输入数字', trigger: 'blur'},
+                        {type: 'number', message: '请输入数字类型'}
+                        // {validator: ckeckNumber, trigger: 'blur'}
                     ],
                     region: [
                         {required: true, message: '请选择活动区域', trigger: 'change'}
@@ -98,24 +123,39 @@
                     ],
                     desc: [
                         {required: true, message: '请填写活动形式', trigger: 'blur'}
+                    ],
+                    productName: [
+                        {required: true, message: '请填写产品名称', trigger: 'blur'}
                     ]
-                }
+                },
+                
             };
         },
         methods: {
-            submitForm(formName) {
-                this.$refs[formName].validate((valid) => {
+            submitForm() {
+                this.$refs['ruleForm'].validate((valid) => {
                     if (valid) {
                         alert('submit!');
+
+                        this.$refs['ruleForm2'].validate((valid) => {
+                            if (valid) {
+                                alert('submit!');
+                            } else {
+                                console.log('error submit!!');
+                                return false;
+                            }
+                        });
                     } else {
                         console.log('error submit!!');
                         return false;
                     }
                 });
+
             },
             resetForm(formName) {
                 this.$refs[formName].resetFields();
             }
+
         }
     }
 </script>
