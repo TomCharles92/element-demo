@@ -8,8 +8,8 @@ export default new Vuex.Store({
   state: {
     count: 0,
     todos: [
-      {id: 1, text: '事件1', done: true},
-      {id: 2, text: '事件2', done: false}
+      { id: 1, text: '事件1', done: true },
+      { id: 2, text: '事件2', done: false }
     ],
     zhihuData: {}
   },
@@ -33,13 +33,13 @@ export default new Vuex.Store({
   },
   // 每个mutations的第一个参数必须是state, 第二个参数称为payload载荷
   mutations: {
-    increment(state) {
+    increment (state) {
       state.count++
     },
-    incrementBy(state, payload) {
+    incrementBy (state, payload) {
       state.count += payload.amount
     },
-    getZhihuData(state) {
+    getZhihuData (state) {
       axios.get('api/2/news/latest')
         .then(res => {
           state.zhihuData = res.data
@@ -48,26 +48,26 @@ export default new Vuex.Store({
   },
   // Action 函数接受一个与 store 实例具有相同方法和属性的 context 对象，但并不是同一个
   actions: {
-    increment(context) {
+    increment (context) {
       context.commit('increment')
     },
     // 用参数解构 argument destructuring 来简化
-    increment2({commit}) {
+    increment2 ({ commit }) {
       commit('increment')
     },
     // 异步 action
-    incrementAsync({commit}) {
+    incrementAsync ({ commit }) {
       setTimeout(() => {
         commit('increment')
       }, 1000)
     },
     // payload 荷载
-    incrementByAsync({commit}, payload) {
+    incrementByAsync ({ commit }, payload) {
       setTimeout(() => {
         commit('incrementBy', payload)
       }, 1000)
     },
-    incrementByAsyncPromise({commit}, payload) {
+    incrementByAsyncPromise ({ commit }, payload) {
       return new Promise((resolve, reject) => {
         setTimeout(() => {
           commit('incrementBy', payload)
@@ -75,7 +75,7 @@ export default new Vuex.Store({
         }, 1000)
       })
     },
-    getZhihuDataAsync({commit}) {
+    getZhihuDataAsync ({ commit }) {
       commit('getZhihuData')
     }
   }

@@ -30,6 +30,16 @@ export default new Router({
           path: '/vuex-test',
           name: 'vuex',
           component: () => import('./views/workbench/VuexTest.vue')
+        },
+        {
+          path: '/tree',
+          name: '树形控件',
+          component: () => import('./views/workbench/Tree.vue')
+        },
+        {
+          path: '/tree2',
+          name: '树形控件2',
+          component: () => import('./views/workbench/Tree2.vue')
         }
       ]
     },
@@ -76,7 +86,38 @@ export default new Router({
           component: () => import('./views/router/UserProfile.vue')
         }
       ]
-
+    },
+    {
+      path: '/layout',
+      name: 'Layout',
+      component: () => import('./views/layout/Layout.vue'),
+      children: [
+        {
+          path: '/layout-table',
+          name: 'layout-table',
+          component: () => import('./views/layout/Table.vue')
+        },
+        {
+          path: '/layout-float',
+          name: 'layout-float',
+          component: () => import('./views/layout/Float.vue')
+        },
+        {
+          path: '/layout-float2',
+          name: 'layout-float2',
+          component: () => import('./views/layout/Float2.vue')
+        },
+        {
+          path: '/layout-float3',
+          name: 'layout-float3',
+          component: () => import('./views/layout/Float3.vue')
+        },
+        {
+          path: '/layout-responsive',
+          name: 'layout-responsive',
+          component: () => import('./views/layout/Responsive.vue')
+        }
+      ]
     }
   ]
 })
