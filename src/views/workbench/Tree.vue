@@ -1,63 +1,136 @@
 <template>
  <div>
-   <el-tree :data="data" :props="defaultProps" @node-click="handleNodeClick"></el-tree>
+   <el-tree
+       :data="data5"
+       show-checkbox
+       node-key="id"
+       default-expand-all
+       :expand-on-click-node="false">
+      <span class="custom-tree-node" slot-scope="{ node, data }">
+        <span>{{ node.label }}</span>
+        <span>
+          <el-button
+              type="text"
+              size="mini"
+              @click="append(data)">
+            Append
+          </el-button>
+          <el-button
+              type="text"
+              size="mini"
+              @click="remove(node, data)">
+            Delete
+          </el-button>
+          <el-button
+              type="text"
+              size="mini"
+              @click="rename(node, data)"
+              >
+              Rename
+          </el-button>
+        </span>
+      </span>
+   </el-tree>
+   
+   <el-dialog :visible.sync="dialogVisible">
+     <el-input v-model="name"></el-input>
+     <el-button @click="dialogVisible = false">取 消</el-button>
+     <el-button type="primary" @click="confirm">确 定</el-button>
+   </el-dialog>
+  
   
  </div>
 </template>
 
 <script>
+  let id = 1000;
+
   export default {
-    name: "Tree",
     data() {
+      const data = [{
+        id: 1,
+        label: '一级 1',
+        children: [{
+          id: 4,
+          label: '二级 1-1',
+          children: [{
+            id: 9,
+            label: '三级 1-1-1'
+          }, {
+            id: 10,
+            label: '三级 1-1-2'
+          }]
+        }]
+      }, {
+        id: 2,
+        label: '一级 2',
+        children: [{
+          id: 5,
+          label: '二级 2-1'
+        }, {
+          id: 6,
+          label: '二级 2-2'
+        }]
+      }, {
+        id: 3,
+        label: '一级 3',
+        children: [{
+          id: 7,
+          label: '二级 3-1'
+        }, {
+          id: 8,
+          label: '二级 3-2'
+        }]
+      }];
       return {
-        data: [{
-          label: '一级 1',
-          children: [{
-            label: '二级 1-1',
-            children: [{
-              label: '三级 1-1-1'
-            }]
-          }]
-        }, {
-          label: '一级 2',
-          children: [{
-            label: '二级 2-1',
-            children: [{
-              label: '三级 2-1-1'
-            }]
-          }, {
-            label: '二级 2-2',
-            children: [{
-              label: '三级 2-2-1'
-            }]
-          }]
-        }, {
-          label: '一级 3',
-          children: [{
-            label: '二级 3-1',
-            children: [{
-              label: '三级 3-1-1'
-            }]
-          }, {
-            label: '二级 3-2',
-            children: [{
-              label: '三级 3-2-1'
-            }]
-          }]
-        }],
-        defaultProps: {
-          children: 'children',
-          label: 'label'
-        }
-      };
+        data4: JSON.parse(JSON.stringify(data)),
+        data5: JSON.parse(JSON.stringify(data)),
+        dialogVisible: false,
+        name: '',
+        currentNode: null
+      }
     },
+
     methods: {
-      handleNodeClick(data) {
-        console.log(data);
+      append(data) {
+        const newChild = { id: id++, label: 'testtest', children: [] };
+        if (!data.children) {
+          this.$set(data, 'children', []);
+        }
+        data.children.push(newChild);
+      },
+
+      remove(node, data) {
+        // console.log(node, data);
+        const parent = node.parent;
+        console.log(parent.data.children, parent.data)
+        const children = parent.data.children || parent.data;
+        console.log(children)
+        const index = children.findIndex(d => d.id === data.id);
+        children.splice(index, 1);
+      },
+
+      rename(node, data) {
+        this.dialogVisible = true;
+        this.name = data.label;
+        this.currentNode = node;
+      },
+      
+      confirm () {
+        this.dialogVisible = false;
+        this.currentNode.data.label = this.name;
       }
     }
-  }
+  };
 </script>
 
 <style scoped>
+  .custom-tree-node {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    padding-right: 8px;
+  }
 </style>

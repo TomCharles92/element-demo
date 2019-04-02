@@ -33,12 +33,12 @@ export default new Router({
         },
         {
           path: '/tree',
-          name: '树形控件',
+          name: 'Ele树形控件',
           component: () => import('./views/workbench/Tree.vue')
         },
         {
           path: '/tree2',
-          name: '树形控件2',
+          name: '手写树形控件',
           component: () => import('./views/workbench/Tree2.vue')
         }
       ]
