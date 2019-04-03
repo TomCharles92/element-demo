@@ -12,21 +12,27 @@
           <el-button
               type="text"
               size="mini"
+              @click="appendBrother(node, data)">
+            新增同级
+          </el-button>
+          <el-button
+              type="text"
+              size="mini"
               @click="append(data)">
-            Append
+            新增子级
           </el-button>
           <el-button
               type="text"
               size="mini"
               @click="remove(node, data)">
-            Delete
+            删除
           </el-button>
           <el-button
               type="text"
               size="mini"
               @click="rename(node, data)"
               >
-              Rename
+              重命名
           </el-button>
         </span>
       </span>
@@ -93,19 +99,25 @@
 
     methods: {
       append(data) {
-        const newChild = { id: id++, label: 'testtest', children: [] };
+        const newChild = { id: id++, label: 'newChild', children: [] };
         if (!data.children) {
           this.$set(data, 'children', []);
         }
         data.children.push(newChild);
       },
 
+      appendBrother(node, data) {
+        if (node.level !== 1) {
+          node.parent.data.children.push({ id: id++, label: 'newBrother', children: [] })
+        } else {
+          node.parent.data.push({ id: id++, label: 'newBrother', children: [] })
+        }
+        
+      },
+
       remove(node, data) {
-        // console.log(node, data);
         const parent = node.parent;
-        console.log(parent.data.children, parent.data)
         const children = parent.data.children || parent.data;
-        console.log(children)
         const index = children.findIndex(d => d.id === data.id);
         children.splice(index, 1);
       },
