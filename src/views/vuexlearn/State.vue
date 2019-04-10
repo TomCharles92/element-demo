@@ -1,10 +1,12 @@
 <template>
-    <div>
-        <h1>count: {{ count1 }}</h1>
-        <h1>countAlias: {{ countAlias }}</h1>
-        <button @click="increase">add</button>
-        <h1>countPlusLocalState: {{ countPlusLocalState }}</h1>
-    </div>
+  <div>
+    <h1>count: {{ count1 }}</h1>
+    <h1>countAlias: {{ countAlias }}</h1>
+    <button @click="increase">
+      add
+    </button>
+    <h1>countPlusLocalState: {{ countPlusLocalState }}</h1>
+  </div>
 </template>
 
 <script>
@@ -12,6 +14,11 @@
 
     export default {
         name: "State",
+        data () {
+            return {
+                localCount: 100
+            }
+        },
         computed: {
             // 通过 store.state 获取状态
             count1 () {
@@ -34,11 +41,6 @@
             // 通过 state.commit 变更状态
             increase () {
                 this.$store.commit('increment')
-            }
-        },
-        data () {
-            return {
-                localCount: 100
             }
         }
     }

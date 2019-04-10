@@ -1,11 +1,11 @@
 <template>
-    <div>
-        <div class=container>       
-            <div class=left></div>
-            <div class=right></div>
-            <div class="middle"></div>
-        </div>
+  <div>
+    <div class="container">       
+      <div class="left" />
+      <div class="right" />
+      <div class="middle" />
     </div>
+  </div>
 </template>
 
 <script>
