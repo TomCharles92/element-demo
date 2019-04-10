@@ -1,12 +1,11 @@
 <template>
   <ul id="demo">
     <tree-item
-        class="item"
-        :item="treeData"
-        @make-folder="makeFolder"
-        @add-item="addItem"
-    ></tree-item>
-    
+      class="item"
+      :item="treeData"
+      @make-folder="makeFolder"
+      @add-item="addItem"
+    />
   </ul>
 </template>
 

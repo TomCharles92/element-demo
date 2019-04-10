@@ -1,51 +1,63 @@
 <template>
- <div>
-   <el-tree
-       :data="data5"
-       show-checkbox
-       node-key="id"
-       default-expand-all
-       :expand-on-click-node="false">
-      <span class="custom-tree-node" slot-scope="{ node, data }">
+  <div>
+    <el-tree
+      :data="data5"
+      show-checkbox
+      node-key="id"
+      default-expand-all
+      :expand-on-click-node="false"
+    >
+      <span
+        slot-scope="{ node, data }"
+        class="custom-tree-node"
+      >
         <span>{{ node.label }}</span>
         <span>
           <el-button
-              type="text"
-              size="mini"
-              @click="appendBrother(node, data)">
+            type="text"
+            size="mini"
+            @click="appendBrother(node, data)"
+          >
             新增同级
           </el-button>
           <el-button
-              type="text"
-              size="mini"
-              @click="append(data)">
+            type="text"
+            size="mini"
+            @click="append(data)"
+          >
             新增子级
           </el-button>
           <el-button
-              type="text"
-              size="mini"
-              @click="remove(node, data)">
+            type="text"
+            size="mini"
+            @click="remove(node, data)"
+          >
             删除
           </el-button>
           <el-button
-              type="text"
-              size="mini"
-              @click="rename(node, data)"
-              >
-              重命名
+            type="text"
+            size="mini"
+            @click="rename(node, data)"
+          >
+            重命名
           </el-button>
         </span>
       </span>
-   </el-tree>
+    </el-tree>
    
-   <el-dialog :visible.sync="dialogVisible">
-     <el-input v-model="name"></el-input>
-     <el-button @click="dialogVisible = false">取 消</el-button>
-     <el-button type="primary" @click="confirm">确 定</el-button>
-   </el-dialog>
-  
-  
- </div>
+    <el-dialog :visible.sync="dialogVisible">
+      <el-input v-model="name" />
+      <el-button @click="dialogVisible = false">
+        取 消
+      </el-button>
+      <el-button
+        type="primary"
+        @click="confirm"
+      >
+        确 定
+      </el-button>
+    </el-dialog>
+  </div>
 </template>
 
 <script>

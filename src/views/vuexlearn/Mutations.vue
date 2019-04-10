@@ -1,13 +1,23 @@
 <template>
-    <div>
-        <h1>Mutations</h1>
-        <h1>count: {{ count }}</h1>
-        <button @click="add">add</button>
-        <button @click="add2">add2</button>
-        <button @click="increment">add3</button>
-        <button @click="add10(10)">addBy10</button>
-        <button @click="incrementBy({ amount: 20 })">addBy20</button>
-    </div>
+  <div>
+    <h1>Mutations</h1>
+    <h1>count: {{ count }}</h1>
+    <button @click="add">
+      add
+    </button>
+    <button @click="add2">
+      add2
+    </button>
+    <button @click="increment">
+      add3
+    </button>
+    <button @click="add10(10)">
+      addBy10
+    </button>
+    <button @click="incrementBy({ amount: 20 })">
+      addBy20
+    </button>
+  </div>
 </template>
 
 <script>

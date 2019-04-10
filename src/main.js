@@ -15,7 +15,6 @@ Vue.config.productionTip = false
 new Vue({
   router, // 将路由挂载到根实例上
   store,
-  render: h => h(App),
   created () {
     this.getZhihuDataAsync()
   },
@@ -23,5 +22,6 @@ new Vue({
     ...mapActions([
       'getZhihuDataAsync'
     ])
-  }
+  },
+  render: h => h(App)
 }).$mount('#app')

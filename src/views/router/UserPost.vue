@@ -1,5 +1,5 @@
 <template>
-    <h1>UserPost</h1>
+  <h1>UserPost</h1>
 </template>
 
 <script>

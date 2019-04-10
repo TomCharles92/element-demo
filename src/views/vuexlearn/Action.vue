@@ -2,11 +2,21 @@
   <div>
     <h1>Action</h1>
     <h1>count: {{ count }}</h1>
-    <button @click="add()">add</button>
-    <button @click="addAmount()">addAmount</button>
-    <button @click="addAmount2({ amount: 20 })">addAmount2</button>
-    <button @click="incrementByAsyncPromise({ amount: 15 })">incrementByAsyncPromise</button>
-    <button @click="getZhihuDataAsync">getZhihuDataAsync</button>
+    <button @click="add()">
+      add
+    </button>
+    <button @click="addAmount()">
+      addAmount
+    </button>
+    <button @click="addAmount2({ amount: 20 })">
+      addAmount2
+    </button>
+    <button @click="incrementByAsyncPromise({ amount: 15 })">
+      incrementByAsyncPromise
+    </button>
+    <button @click="getZhihuDataAsync">
+      getZhihuDataAsync
+    </button>
   </div>
 </template>
 

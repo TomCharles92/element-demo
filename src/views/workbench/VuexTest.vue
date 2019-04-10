@@ -1,5 +1,5 @@
 <template>
-    <h1>VuexTest</h1>
+  <h1>VuexTest</h1>
 </template>
 
 <script>

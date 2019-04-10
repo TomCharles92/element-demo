@@ -1,14 +1,23 @@
 <template>
-    <div id="app">
-        <el-row type="flex" justify="end">
-            <el-col :span="5" class="side">
-                <SideNavMenu></SideNavMenu>
-            </el-col>
-            <el-col :span="19" class="main">
-                <router-view></router-view>
-            </el-col>
-        </el-row>
-    </div>
+  <div id="app">
+    <el-row
+      type="flex"
+      justify="end"
+    >
+      <el-col
+        :span="5"
+        class="side"
+      >
+        <SideNavMenu />
+      </el-col>
+      <el-col
+        :span="19"
+        class="main"
+      >
+        <router-view />
+      </el-col>
+    </el-row>
+  </div>
 </template>
 
 <script>
