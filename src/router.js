@@ -43,7 +43,7 @@ export default new Router({
         },
         {
           path: '/tree3',
-          name: '手写树形控件',
+          name: '手写树形控件2',
           component: () => import('./views/workbench/Tree3.vue')
         }
       ]
@@ -121,6 +121,23 @@ export default new Router({
           path: '/layout-responsive',
           name: 'layout-responsive',
           component: () => import('./views/layout/Responsive.vue')
+        }
+      ]
+    },
+    {
+      path: '/layout-vertical-center',
+      name: 'layout-vertical-center',
+      component: () => import('./views/layout-vertical-center/layout-vertical-center.vue'),
+      children: [
+        {
+          path: '/flexbox',
+          name: 'flexbox',
+          component: () => import('./views/layout-vertical-center/Flexbox.vue')
+        },
+        {
+          path: '/absolute-and-block',
+          name: 'absolute-and-block',
+          component: () => import('./views/layout-vertical-center/absolute-and-block.vue')
         }
       ]
     }

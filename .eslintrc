@@ -10,7 +10,7 @@
   "extends": [
     "plugin:vue/essential",
     // 这一项必填
-    "plugin:vue/recommended",
+    "plugin:vue/recommended"
   ],
   // 此项指定环境的全局变量
   "env": {
@@ -26,6 +26,15 @@
     "error" -> 2 开启错误规则
   */
   "rules": {
-    "console": "off"
+    "console": "off",
+    "vue/html-self-closing": ["error", {
+      "html": {
+        "void": "any",
+        "normal": "any",
+        "component": "any"
+      },
+      "svg": "always",
+      "math": "always"
+    }]
   }
 }
