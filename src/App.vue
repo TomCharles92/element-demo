@@ -34,8 +34,6 @@
         top: 0;
         bottom: 0;
         left: 0;
-        overflow: auto;
-        text-align: center;
         box-sizing: border-box;
 
         /deep/ .el-menu {

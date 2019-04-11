@@ -40,6 +40,11 @@ export default new Router({
           path: '/tree2',
           name: '手写树形控件',
           component: () => import('./views/workbench/Tree2.vue')
+        },
+        {
+          path: '/tree3',
+          name: '手写树形控件',
+          component: () => import('./views/workbench/Tree3.vue')
         }
       ]
     },
