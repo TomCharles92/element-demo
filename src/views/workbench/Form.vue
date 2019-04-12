@@ -151,114 +151,124 @@
 </template>
 
 <script>
-    export default {
-        name: "Form",
-        data() {
-            let ckeckNumber = (rule, value, callback) => {
-                if (!value) {
-                return callback(new Error('不能为空'));
-                }
-                // setTimeout(() => {
-                // if (!Number.isInteger(value)) {
-                //     callback(new Error('请输入数字值'));
-                // } else {
-                //     if (value < 18) {
-                //     callback(new Error('必须年满18岁'));
-                //     } else {
-                //     callback();
-                //     }
-                // }
-                // }, 1000);
-            };
-            return {
-                ruleForm: {
-                    name: '',
-                    num: '',
-                    region: '',
-                    date1: '',
-                    date2: '',
-                    delivery: false,
-                    type: [],
-                    resource: '',
-                    desc: '',
-                    productName: ''
-                },
-                rules: {
-                    name: [
-                        {required: true, message: '请输入活动名称', trigger: 'blur'},
-                        {min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur'}
-                    ],
-                    num: [
-                        {required: true, message: '请输入数字', trigger: 'blur'},
-                        {type: 'number', message: '请输入数字类型'}
-                        // {validator: ckeckNumber, trigger: 'blur'}
-                    ],
-                    region: [
-                        {required: true, message: '请选择活动区域', trigger: 'change'}
-                    ],
-                    date1: [
-                        {type: 'date', required: true, message: '请选择日期', trigger: 'change'}
-                    ],
-                    date2: [
-                        {type: 'date', required: true, message: '请选择时间', trigger: 'change'}
-                    ],
-                    type: [
-                        {type: 'array', required: true, message: '请至少选择一个活动性质', trigger: 'change'}
-                    ],
-                    resource: [
-                        {required: true, message: '请选择活动资源', trigger: 'change'}
-                    ],
-                    desc: [
-                        {required: true, message: '请填写活动形式', trigger: 'blur'}
-                    ],
-                    productName: [
-                        {required: true, message: '请填写产品名称', trigger: 'blur'}
-                    ]
-                },
-                
-            };
-        },
-        methods: {
-            submitForm() {
-                this.$refs['ruleForm'].validate((valid) => {
-                    if (valid) {
-                        alert('submit!');
+export default {
+  name: "Form",
+  data() {
+    let ckeckNumber = (rule, value, callback) => {
+      if (!value) {
+        return callback(new Error("不能为空"));
+      }
+      // setTimeout(() => {
+      // if (!Number.isInteger(value)) {
+      //     callback(new Error('请输入数字值'));
+      // } else {
+      //     if (value < 18) {
+      //     callback(new Error('必须年满18岁'));
+      //     } else {
+      //     callback();
+      //     }
+      // }
+      // }, 1000);
+    };
+    return {
+      ruleForm: {
+        name: "",
+        num: "",
+        region: "",
+        date1: "",
+        date2: "",
+        delivery: false,
+        type: [],
+        resource: "",
+        desc: "",
+        productName: ""
+      },
+      rules: {
+        name: [
+          { required: true, message: "请输入活动名称", trigger: "blur" },
+          { min: 3, max: 5, message: "长度在 3 到 5 个字符", trigger: "blur" }
+        ],
+        num: [
+          { required: true, message: "请输入数字", trigger: "blur" },
+          { type: "number", message: "请输入数字类型" }
+          // {validator: ckeckNumber, trigger: 'blur'}
+        ],
+        region: [
+          { required: true, message: "请选择活动区域", trigger: "change" }
+        ],
+        date1: [
+          {
+            type: "date",
+            required: true,
+            message: "请选择日期",
+            trigger: "change"
+          }
+        ],
+        date2: [
+          {
+            type: "date",
+            required: true,
+            message: "请选择时间",
+            trigger: "change"
+          }
+        ],
+        type: [
+          {
+            type: "array",
+            required: true,
+            message: "请至少选择一个活动性质",
+            trigger: "change"
+          }
+        ],
+        resource: [
+          { required: true, message: "请选择活动资源", trigger: "change" }
+        ],
+        desc: [{ required: true, message: "请填写活动形式", trigger: "blur" }],
+        productName: [
+          { required: true, message: "请填写产品名称", trigger: "blur" }
+        ]
+      }
+    };
+  },
+  methods: {
+    submitForm() {
+      this.$refs["ruleForm"].validate(valid => {
+        debugger;
+        if (valid) {
+          alert("submit!");
 
-                        this.$refs['ruleForm2'].validate((valid) => {
-                            if (valid) {
-                                alert('submit!');
-                            } else {
-                                console.log('error submit!!');
-                                return false;
-                            }
-                        });
-                    } else {
-                        console.log('error submit!!');
-                        return false;
-                    }
-                });
-
-            },
-            resetForm(formName) {
-                this.$refs[formName].resetFields();
+          this.$refs["ruleForm2"].validate(valid => {
+            if (valid) {
+              alert("submit!");
+            } else {
+              console.log("error submit!!");
+              return false;
             }
-
+          });
+        } else {
+          console.log("error submit!!");
+          return false;
         }
+      });
+    },
+    resetForm(formName) {
+      this.$refs[formName].resetFields();
     }
+  }
+};
 </script>
 
-<style scoped>
-    .demo-ruleForm {
-        width: 460px;
-        text-align: left;
-    }
+<style lang="less" scoped>
+.demo-ruleForm {
+  width: 460px;
+  text-align: left;
+}
 
-    .demo-ruleForm .el-select /deep/ .el-input {
-        width: 360px;
-    }
+.demo-ruleForm .el-select /deep/ .el-input {
+  width: 360px;
+}
 
-    .demo-ruleForm /deep/ .line {
-        text-align: center;
-    }
-
+.demo-ruleForm /deep/ .line {
+  text-align: center;
+}
 </style>

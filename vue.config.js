@@ -8,5 +8,9 @@ module.exports = {
         pathRewrite: { '^/zhihu': '' }
       }
     }
+  },
+  configureWebpack: {
+    // 配置调试工具
+    devtool: 'source-map'
   }
 }
