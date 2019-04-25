@@ -45,6 +45,11 @@ export default new Router({
           path: '/tree3',
           name: '手写树形控件2',
           component: () => import('./views/workbench/Tree3.vue')
+        },
+        {
+          path: '/message-box',
+          name: '消息盒子',
+          component: () => import('./views/workbench/MessageBox.vue')
         }
       ]
     },
