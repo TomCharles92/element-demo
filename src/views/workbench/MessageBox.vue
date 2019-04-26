@@ -1,6 +1,8 @@
 <template>
   <div>
-    <el-button @click="test">按钮</el-button>
+    <el-button @click="test">
+      按钮
+    </el-button>
   </div>
 </template>
 

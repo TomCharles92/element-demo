@@ -145,6 +145,18 @@ export default new Router({
           component: () => import('./views/layout-vertical-center/absolute-and-block.vue')
         }
       ]
+    },
+    {
+      path: '/vue-deepth',
+      name: '深入Vue',
+      component: () => import('./views/vue-deepth/VueDeepth'),
+      children: [
+        {
+          path: '/render-function',
+          name: '渲染函数',
+          component: () => import('./views/vue-deepth/RenderFunction')
+        }
+      ]
     }
   ]
 })
