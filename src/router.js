@@ -152,6 +152,11 @@ export default new Router({
       component: () => import('./views/vue-deepth/VueDeepth'),
       children: [
         {
+          path: '/template-syntax',
+          name: '模板语法',
+          component: () => import('./views/vue-deepth/TemplateSyntax')
+        },
+        {
           path: '/render-function',
           name: '渲染函数',
           component: () => import('./views/vue-deepth/RenderFunction')

@@ -6,7 +6,7 @@
       <slot></slot>
     </AnchoredHeading>
 
-    <AnchoredHeading2 :level="1">
+    <AnchoredHeading2 :level="3">
       AnchoredHeading2
       <slot></slot>
     </AnchoredHeading2>
