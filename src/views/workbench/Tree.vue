@@ -118,7 +118,7 @@
         data.children.push(newChild);
       },
 
-      appendBrother(node, data) {
+      appendBrother(node) {
         if (node.level !== 1) {
           node.parent.data.children.push({ id: id++, label: 'newBrother', children: [] })
         } else {

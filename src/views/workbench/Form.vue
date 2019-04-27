@@ -233,7 +233,6 @@ export default {
   methods: {
     submitForm() {
       this.$refs["ruleForm"].validate(valid => {
-        debugger;
         if (valid) {
           alert("submit!");
 

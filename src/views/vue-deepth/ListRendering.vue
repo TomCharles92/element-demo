@@ -2,7 +2,7 @@
   <div>
     <h3>列表渲染</h3>
     <!-- <div v-for="(value, name, index) in object">{{ index }}. {{ name }}: {{ value }}</div> -->
-    <div v-for="(item, index) in list" :key="item.id">
+    <div v-for="(item) in list" :key="item.id">
       <input type="checkbox">
       {{ item.name }}
     </div>
