@@ -31,6 +31,17 @@
       <span class="right">float</span>
     </div>
     <div class="container2" />
+
+    <p>2. 给父元素加一个 float</p>
+    <div 
+      class="container" 
+      style="float: left;"
+    >       
+      <span class="left">float</span>
+      <span>我是字</span>
+      <span class="right">float</span>
+    </div>
+    <div class="container2" />
   </div>
 </template>
 

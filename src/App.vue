@@ -28,6 +28,7 @@ export default {
   bottom: 0;
   left: 0;
   box-sizing: border-box;
+  overflow-y: scroll;
 
   /deep/ .el-menu {
     height: 100%;
