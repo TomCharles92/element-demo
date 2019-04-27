@@ -5,7 +5,7 @@
     <h4>多行文本</h4>
     <span style="white-space: pre-line;">{{ message }}</span>
     <br>
-    <textarea v-model="message"></textarea>
+    <textarea v-model.lazy="message"></textarea>
 
     <h4>单个复选框</h4>
     <input type="checkbox" id="check" v-model="check">
@@ -30,7 +30,7 @@
     <h4>选择框</h4>
     <select v-model="selected">
       <option disabled value="">请选择</option>
-      <option v-for="option in optionList" :key="option.id" :value="option.id">{{ option.value }}</option>
+      <option v-for="option in optionList" :value="option.id" :key="option.id">{{ option.value }}</option>
     </select>
     <p>selected: {{ selected }}</p>
 

@@ -175,8 +175,13 @@ export default new Router({
         },
         {
           path: "/form-input-binding",
-          name: "多行文本",
+          name: "表单输入绑定",
           component: () => import("./views/vue-deepth/FormInputBinding")
+        },
+        {
+          path: "/component-basics",
+          name: "组件基础",
+          component: () => import("./views/vue-deepth/ComponentBasics")
         },
         {
           path: "/render-function",
