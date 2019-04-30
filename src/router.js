@@ -189,6 +189,18 @@ export default new Router({
           component: () => import("./views/vue-deepth/RenderFunction")
         }
       ]
+    },
+    {
+      path: "/plugins",
+      name: "各种Vue插件",
+      component: () => import("./views/plugins/Plugins"),
+      children: [
+        {
+          path: '/vee-validate',
+          name: "VeeValidate",
+          component: () => import("./views/plugins/VeeValidate")
+        }
+      ]
     }
   ]
 });
