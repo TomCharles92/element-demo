@@ -11,7 +11,19 @@
 <script>
 export default {
     name: "BlogPost",
-    props: ["post"]
+    props: ["post"],
+    data: function() {
+      return {
+        myPost: this.post
+      }
+    },
+    // 这样写就用不了this了
+    // data: () => ({
+    //   myPost: this.post
+    // }),
+    created() {
+      console.log(this.post);
+    }
 }
 </script>
 
