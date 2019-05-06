@@ -17,6 +17,9 @@
     <button @click="incrementBy({ amount: 20 })">
       addBy20
     </button>
+    <p>
+      <button @click="updateProductInfo">product</button>
+    </p>
   </div>
 </template>
 
@@ -27,7 +30,8 @@
         name: "Mutations",
         computed: {
             ...mapState([
-                'count'
+                'count',
+                'productInfo'
             ])
         },
         // commit mutation 的三种方式
@@ -44,7 +48,12 @@
             ...mapMutations([
                 'increment',
                 'incrementBy'
-            ])
+            ]),
+            updateProductInfo() {
+              // this.productInfo.name = '产品2'
+              this.$store.commit('setProductInfo', { productInfo: { name: '产品2' }})
+              console.log(this.productInfo);
+            }
         }
     }
 </script>

@@ -149,48 +149,6 @@ export default new Router({
       ]
     },
     {
-      path: "/vue-deepth",
-      name: "深入Vue",
-      component: () => import("./views/vue-deepth/VueDeepth"),
-      children: [
-        {
-          path: "/template-syntax",
-          name: "模板语法",
-          component: () => import("./views/vue-deepth/TemplateSyntax")
-        },
-        {
-          path: "/computed-and-watcher",
-          name: "计算属性和侦听器",
-          component: () => import("./views/vue-deepth/ComputedAndWatcher")
-        },
-        {
-          path: "/conditional-rendering",
-          name: "条件渲染",
-          component: () => import("./views/vue-deepth/ConditionalRendering")
-        },
-        {
-          path: "/list-rendering",
-          name: "列表渲染",
-          component: () => import("./views/vue-deepth/ListRendering")
-        },
-        {
-          path: "/form-input-binding",
-          name: "表单输入绑定",
-          component: () => import("./views/vue-deepth/FormInputBinding")
-        },
-        {
-          path: "/component-basics",
-          name: "组件基础",
-          component: () => import("./views/vue-deepth/ComponentBasics")
-        },
-        {
-          path: "/render-function",
-          name: "渲染函数",
-          component: () => import("./views/vue-deepth/RenderFunction")
-        }
-      ]
-    },
-    {
       path: "/plugins",
       name: "各种Vue插件",
       component: () => import("./views/plugins/Plugins"),
@@ -199,6 +157,70 @@ export default new Router({
           path: '/vee-validate',
           name: "VeeValidate",
           component: () => import("./views/plugins/VeeValidate")
+        }
+      ]
+    },
+    {
+      path: "/vue-essentials",
+      name: "深入Vue",
+      component: () => import("./views/vue-essentials/VueDeepth"),
+      children: [
+        {
+          path: "/template-syntax",
+          name: "模板语法",
+          component: () => import("./views/vue-essentials/TemplateSyntax")
+        },
+        {
+          path: "/computed-and-watcher",
+          name: "计算属性和侦听器",
+          component: () => import("./views/vue-essentials/ComputedAndWatcher")
+        },
+        {
+          path: "/conditional-rendering",
+          name: "条件渲染",
+          component: () => import("./views/vue-essentials/ConditionalRendering")
+        },
+        {
+          path: "/list-rendering",
+          name: "列表渲染",
+          component: () => import("./views/vue-essentials/ListRendering")
+        },
+        {
+          path: "/form-input-binding",
+          name: "表单输入绑定",
+          component: () => import("./views/vue-essentials/FormInputBinding")
+        },
+        {
+          path: "/component-basics",
+          name: "组件基础",
+          component: () => import("./views/vue-essentials/ComponentBasics")
+        },
+        {
+          path: "/render-function",
+          name: "渲染函数",
+          component: () => import("./views/vue-essentials/RenderFunction")
+        }
+      ]
+    },
+    {
+      path: "/vue-components-in-depth",
+      name: "深入了解组件",
+      component: () => import("./views/vue-components-in-depth/VueComponentsInDepth"),
+      children: [
+        {
+          path: "/automatic-global-registration",
+          name: "全局注册基础组件",
+          component: () => import("./views/vue-components-in-depth/AutomaticGlobalRegistration")
+        },
+        {
+          path: "/one-way-data-flow",
+          name: "Prop单向数据流",
+          component: () => import("./views/vue-components-in-depth/OneWayDataFlow")
+        },
+        {
+          path: "/custom-event",
+          name: "自定义事件",
+          component: () => import("./views/vue-components-in-depth/CustomEvent")
         }
       ]
     }

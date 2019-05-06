@@ -3,6 +3,7 @@ import App from './App.vue'
 import './plugins/element.js'
 import './assets/common.less'
 import './plugins/vee-validate.js'
+import './plugins/global.js' // 自动全局注册基础组件
 import router from './router'
 import store from './store'
 import axios from 'axios'

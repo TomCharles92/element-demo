@@ -11,7 +11,11 @@ export default new Vuex.Store({
       { id: 1, text: '事件1', done: true },
       { id: 2, text: '事件2', done: false }
     ],
-    zhihuData: {}
+    zhihuData: {},
+    productInfo: {
+      name: '产品全称',
+      shortName: '产品简称'
+    }
   },
   getters: {
     doneTodos: state => {
@@ -44,6 +48,9 @@ export default new Vuex.Store({
         .then(res => {
           state.zhihuData = res.data
         })
+    },
+    setProductInfo (state, payload) {
+      state.productInfo = payload.productInfo
     }
   },
   // Action 函数接受一个与 store 实例具有相同方法和属性的 context 对象，但并不是同一个
