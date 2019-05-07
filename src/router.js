@@ -221,6 +221,11 @@ export default new Router({
           path: "/custom-event",
           name: "自定义事件",
           component: () => import("./views/vue-components-in-depth/CustomEvent")
+        },
+        {
+          path: '/vue-pull-to',
+          name: "VuePullTo",
+          component: () => import("./views/plugins/VuePullTo.vue")
         }
       ]
     }
