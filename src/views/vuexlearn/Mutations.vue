@@ -18,6 +18,7 @@
       addBy20
     </button>
     <p>
+      {{ productInfo }}
       <button @click="updateProductInfo">product</button>
     </p>
   </div>
@@ -50,7 +51,9 @@
                 'incrementBy'
             ]),
             updateProductInfo() {
-              // this.productInfo.name = '产品2'
+              console.log(this.productInfo === this.$store.productInfo, "两者不是同一个对象");
+
+              this.productInfo.name = '产品2'
               this.$store.commit('setProductInfo', { productInfo: { name: '产品2' }})
               console.log(this.productInfo);
             }
