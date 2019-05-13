@@ -9,6 +9,9 @@ import store from './store'
 import axios from 'axios'
 import { mapActions } from 'vuex'
 import toasted from 'vue-toasted'
+import infiniteScroll from 'vue-infinite-scroll'
+
+Vue.use(infiniteScroll)
 
 Vue.use(toasted, {
   position: 'top-center',

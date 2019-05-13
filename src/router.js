@@ -226,6 +226,11 @@ export default new Router({
           path: '/vue-pull-to',
           name: "VuePullTo",
           component: () => import("./views/plugins/VuePullTo.vue")
+        },
+        {
+          path: "/vue-infinite-scroll",
+          name: "VueInfiniteScroll",
+          component: () => import("./views/plugins/VueInfiniteScroll")
         }
       ]
     }
