@@ -157,6 +157,16 @@ export default new Router({
           path: '/vee-validate',
           name: "VeeValidate",
           component: () => import("./views/plugins/VeeValidate")
+        },
+        {
+          path: '/vue-pull-to',
+          name: "VuePullTo",
+          component: () => import("./views/plugins/VuePullTo.vue")
+        },
+        {
+          path: "/vue-infinite-scroll",
+          name: "VueInfiniteScroll",
+          component: () => import("./views/plugins/VueInfiniteScroll")
         }
       ]
     },
@@ -221,16 +231,6 @@ export default new Router({
           path: "/custom-event",
           name: "自定义事件",
           component: () => import("./views/vue-components-in-depth/CustomEvent")
-        },
-        {
-          path: '/vue-pull-to',
-          name: "VuePullTo",
-          component: () => import("./views/plugins/VuePullTo.vue")
-        },
-        {
-          path: "/vue-infinite-scroll",
-          name: "VueInfiniteScroll",
-          component: () => import("./views/plugins/VueInfiniteScroll")
         }
       ]
     }
