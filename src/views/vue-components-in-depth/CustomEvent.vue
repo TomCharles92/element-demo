@@ -1,5 +1,6 @@
 <template>
   <div>
+    <GoBack></GoBack>
     <h1>自定义组件</h1>
 
     <h3>自定义组件的 v-model</h3>
