@@ -228,6 +228,18 @@ export default new Router({
           component: () => import("./views/plugins/VuePullTo.vue")
         }
       ]
+    },
+    {
+      path: "/new-js-knowledge",
+      name: "新的JS知识",
+      component: () => import("./views/new-js-knowledge/index"),
+      children: [
+        {
+          path: "/blob",
+          name: "Blob",
+          component: () => import("./views/new-js-knowledge/Blob")
+        }
+      ]
     }
   ]
 });
