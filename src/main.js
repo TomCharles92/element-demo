@@ -9,6 +9,12 @@ import store from './store'
 import axios from 'axios'
 import { mapActions } from 'vuex'
 import toasted from 'vue-toasted'
+import infiniteScroll from 'vue-infinite-scroll'
+import GoBack from './components/GoBack'
+
+Vue.component('GoBack', GoBack)
+
+Vue.use(infiniteScroll)
 
 Vue.use(toasted, {
   position: 'top-center',
