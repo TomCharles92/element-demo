@@ -209,6 +209,11 @@ export default new Router({
           path: "/render-function",
           name: "渲染函数",
           component: () => import("./views/vue-essentials/RenderFunction")
+        },
+        {
+          path: "/life-cycle",
+          name: "09.生命周期",
+          component: () => import("./views/vue-essentials/09.LifeCycle")
         }
       ]
     },
