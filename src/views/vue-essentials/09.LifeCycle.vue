@@ -5,9 +5,7 @@
       <button @click="change">Change</button>
 
       <p><button @click="show = !show">显示与隐藏</button></p>
-      <template v-if="show">
-        <IfControl ></IfControl>
-      </template>
+      <IfControl v-if="show"></IfControl>
     </div>
   </transition>
 </template>
@@ -32,7 +30,6 @@ export default {
     console.log("创建完成：");
     console.log(this.$el);
     console.log(this.$data);
-    console.log(this)
   },
   beforeMount() {
     console.log("挂载前：");
@@ -46,7 +43,6 @@ export default {
   },
   beforeUpdate() {
     console.log("=即将更新渲染=");
-    // console.log(this.$refs);
     let name = this.$refs.name.innerHTML;
     console.log("name:" + name);
   },
@@ -55,10 +51,10 @@ export default {
     let name = this.$refs.name.innerHTML;
     console.log("name:" + name);
   },
-  beforeDestory() {
+  beforeDestroy() {
     console.log("销毁前：");
   },
-  destoryed() {
+  destroyed() {
     console.log("销毁完成：");
   },
   methods: {

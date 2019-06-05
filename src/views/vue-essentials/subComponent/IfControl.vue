@@ -1,7 +1,10 @@
 <template>
-  <transition @after-leave="afterLeave">
-    <div>通过 v-if 来控制组件的销毁</div>
-  </transition>
+  <!-- <transition @after-leave="afterLeave"> -->
+    <div>
+      <h3>通过 v-if 来控制组件的销毁</h3>
+      <button @click="handleDestory">手动销毁</button>
+    </div>
+  <!-- </transition> -->
 </template>
 
 <script>
@@ -43,19 +46,21 @@ export default {
     let name = this.$refs.name.innerHTML;
     console.log("name:" + name);
   },
-  beforeDestory() {
+  beforeDestroy() {
     console.log("=========子组件销毁前：");
   },
-  destoryed() {
-    debugger;
+  destroyed() {
     console.log("=========子组件销毁完成：");
   },
   methods: {
     afterLeave() {
       console.log("子组件离开了");
-      this.$destroy(true);
-      console.log(this.$el.parentNode)
+      // this.$destroy();
+      // console.log(this.$el.parentNode)
       // this.$el.parentNode.removeChild(this.$el);
+    },
+    handleDestory() {
+      console.log(223)
     }
   }
 };
