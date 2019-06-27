@@ -248,6 +248,11 @@ export default new Router({
           path: "/blob",
           name: "Blob",
           component: () => import("./views/new-js-knowledge/Blob")
+        },
+        {
+          path: "/promise",
+          name: "Promise",
+          component: () => import("./views/new-js-knowledge/Promise")
         }
       ]
     }
