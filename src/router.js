@@ -167,6 +167,11 @@ export default new Router({
           path: "/vue-infinite-scroll",
           name: "VueInfiniteScroll",
           component: () => import("./views/plugins/VueInfiniteScroll")
+        },
+        {
+          path: "/Clipboard",
+          name: "Clipboard",
+          component: () => import("./views/plugins/Clipboard")
         }
       ]
     },
@@ -248,11 +253,6 @@ export default new Router({
           path: "/blob",
           name: "Blob",
           component: () => import("./views/new-js-knowledge/Blob")
-        },
-        {
-          path: "/promise",
-          name: "Promise",
-          component: () => import("./views/new-js-knowledge/Promise")
         }
       ]
     }
