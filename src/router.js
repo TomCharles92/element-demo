@@ -241,6 +241,11 @@ export default new Router({
           path: "/custom-event",
           name: "自定义事件",
           component: () => import("./views/vue-components-in-depth/CustomEvent")
+        },
+        {
+          path: "/SlotDemo",
+          name: "Slot插槽",
+          component: () => import("./views/vue-components-in-depth/SlotDemo")
         }
       ]
     },
