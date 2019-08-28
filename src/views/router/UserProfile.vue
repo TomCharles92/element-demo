@@ -10,7 +10,7 @@
         },
         methods: {
             getData () {
-                this.$axios.get('api/2/news/latest')
+                this.$axios.get('/zhihu/api/2/news/latest')
                     .then(res => {
                         console.log(res.data)
                     })

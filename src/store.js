@@ -44,7 +44,7 @@ export default new Vuex.Store({
       state.count += payload.amount
     },
     getZhihuData (state) {
-      axios.get('api/2/news/latest')
+      axios.get('/zhihu/api/2/news/latest')
         .then(res => {
           state.zhihuData = res.data
         })

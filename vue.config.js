@@ -6,7 +6,21 @@ module.exports = {
         ws: true, // proxy websockets
         changeOrigin: true, // needed for virtual hosted sites
         pathRewrite: { '^/zhihu': '' }
-      }
+      },
+      // 用于文件下载的服务，是 abscloud-lite-app 的后台服务
+      '/downloadTest': {
+        target: 'http://localhost:8181',
+        ws: true, // proxy websockets
+        changeOrigin: true, // needed for virtual hosted sites
+        pathRewrite: { '^/downloadTest': '' }
+      },
+      // http://speedtest.london.linode.com/100MB-london.bin
+      '/speedtest': {
+        target: 'http://speedtest.london.linode.com',
+        ws: true, // proxy websockets
+        changeOrigin: true, // needed for virtual hosted sites
+        pathRewrite: { '^/speedtest': '' }
+      },
     }
   },
   configureWebpack: {

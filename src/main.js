@@ -22,7 +22,7 @@ Vue.use(toasted, {
 })
 
 Vue.prototype.$axios = axios
-axios.defaults.baseURL = '/zhihu'
+axios.defaults.baseURL = '/'
 
 Vue.config.productionTip = false
 

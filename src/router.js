@@ -258,6 +258,11 @@ export default new Router({
           path: "/blob",
           name: "Blob",
           component: () => import("./views/new-js-knowledge/Blob")
+        },
+        {
+          path: "/XMLHttpRequest",
+          name: "XMLHttpRequest",
+          component: () => import("./views/new-js-knowledge/XMLHttpRequest")
         }
       ]
     }
