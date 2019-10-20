@@ -154,6 +154,11 @@ export default new Router({
       component: () => import("./views/plugins/Plugins"),
       children: [
         {
+          path: '/ZhMessage',
+          name: "模仿Element插件",
+          component: () => import("./views/plugins/ZhMessage")
+        },
+        {
           path: '/vee-validate',
           name: "VeeValidate",
           component: () => import("./views/plugins/VeeValidate")
