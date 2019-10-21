@@ -15,7 +15,7 @@ import MyMessage from "./components/main.js"
 
 export default {
   name: "ZhMessage",
-  components: { myButton, MyMessage },
+  components: { myButton },
   data() {
     return {
       count: 1
