@@ -22,7 +22,7 @@ export default {
       this.$axios({
         // 用axios发送post请求
         method: "post",
-        url: "/downloadTest/downLoadYiModel", // 请求地址
+        url: "/abscloudLite/downLoadYiModel", // 请求地址
         responseType: "blob" // 表明返回服务器返回的数据类型
       }).then(res => {
         console.log(res.headers["content-disposition"])

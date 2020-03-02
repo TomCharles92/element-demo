@@ -268,6 +268,11 @@ export default new Router({
           path: "/XMLHttpRequest",
           name: "XMLHttpRequest",
           component: () => import("./views/new-js-knowledge/XMLHttpRequest")
+        },
+        {
+          path: "/ScrollToTarget",
+          name: "ScrollToTarget",
+          component: () => import("./views/new-js-knowledge/ScrollToTarget")
         }
       ]
     }

@@ -2,17 +2,20 @@
   <div>
     <h1>XMLHttpRequest</h1>
     <div id="status"></div>
+    <upload></upload>
   </div>
 </template>
 
 <script>
+import upload from "./upload"
 export default {
   name: "XMLHttpRequest",
+  components: { upload },
   created() {
     // this.synchronous();
     // this.asynchronous();
 
-    this.progressEvent();
+    // this.progressEvent();
   },
   methods: {
     // 同步方法
@@ -63,14 +66,16 @@ export default {
       };
 
       xhr.onprogress = (event) => {
+        console.log(event)
         let divStatus = document.getElementById("status");
         if (event.lengthComputable) {
+          console.log(`接收到${event.position} of ${event.totalSize} bytes`)
           divStatus.innerHTML = `接收到${event.position} of ${event.totalSize} bytes`;
         }
       }
 
-      xhr.open("get", "/speedtest/100MB-london.bin", true);
-      // xhr.setRequestHeader("responseType", "blob")
+      xhr.open("post", "/abscloudLite/downLoadYiModel", true);
+      xhr.setRequestHeader("responseType", "blob");
       xhr.send(null);
 
       console.log(xhr)

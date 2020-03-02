@@ -48,9 +48,13 @@ export default {
   },
   beforeDestroy() {
     console.log("=========子组件销毁前：");
+    console.log(this.$el);
+    console.log(this.$data);
   },
   destroyed() {
     console.log("=========子组件销毁完成：");
+    console.log(this.$el);
+    console.log(this.$data);
   },
   methods: {
     afterLeave() {

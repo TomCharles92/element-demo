@@ -8,11 +8,11 @@ module.exports = {
         pathRewrite: { '^/zhihu': '' }
       },
       // 用于文件下载的服务，是 abscloud-lite-app 的后台服务
-      '/downloadTest': {
+      '/abscloudLite': {
         target: 'http://localhost:8181',
         ws: true, // proxy websockets
         changeOrigin: true, // needed for virtual hosted sites
-        pathRewrite: { '^/downloadTest': '' }
+        pathRewrite: { '^/abscloudLite': '' }
       },
       // http://speedtest.london.linode.com/100MB-london.bin
       '/speedtest': {

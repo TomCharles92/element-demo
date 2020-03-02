@@ -4,14 +4,16 @@
       <h1 ref="name">{{ name }}</h1>
       <button @click="change">Change</button>
 
-      <p><button @click="show = !show">显示与隐藏</button></p>
+      <p>
+        <button @click="show = !show">显示与隐藏</button>
+      </p>
       <IfControl v-if="show"></IfControl>
     </div>
   </transition>
 </template>
 
 <script>
-import IfControl from "./subComponent/IfControl"
+import IfControl from "./subComponent/IfControl";
 export default {
   name: "LifeCycle",
   data() {
@@ -53,9 +55,13 @@ export default {
   },
   beforeDestroy() {
     console.log("销毁前：");
+    console.log(this.$el);
+    console.log(this.$data);
   },
   destroyed() {
     console.log("销毁完成：");
+    console.log(this.$el);
+    console.log(this.$data);
   },
   methods: {
     // 改变数据会调用 update 相关的钩子
@@ -64,9 +70,12 @@ export default {
     },
     afterLeave() {
       console.log("离开了");
-      this.$destroy(true);
-      console.log(this.$el.parentNode)
+      // this.$destroy(true);
+      console.log(this.$el.parentNode);
       // this.$el.parentNode.removeChild(this.$el);
+
+      console.log(this.$el);
+      console.log(this.$data);
     }
   }
 };
