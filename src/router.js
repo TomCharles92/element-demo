@@ -50,6 +50,11 @@ export default new Router({
           path: "/message-box",
           name: "消息盒子",
           component: () => import("./views/workbench/MessageBox.vue")
+        },
+        {
+          path: "/CreateReadUpdateDelete",
+          name: "增删改查-后管功能",
+          component: () => import("./views/workbench/CreateReadUpdateDelete.vue")
         }
       ]
     },
