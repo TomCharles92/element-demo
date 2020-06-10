@@ -2,11 +2,14 @@
   <div id="app">
     <el-row type="flex" justify="end">
       <el-col :span="5" class="side">
-        <SideNavMenu/>
+        <SideNavMenu />
       </el-col>
       <el-col :span="19" class="main">
+        <div class="breadcrumbContainer">
+          <BreadCrumb></BreadCrumb>
+        </div>
         <el-row type="flex" justify="start">
-          <router-view/>
+          <router-view />
         </el-row>
       </el-col>
     </el-row>
@@ -15,9 +18,10 @@
 
 <script>
 import SideNavMenu from "./components/SideNavMenu";
+import BreadCrumb from "@/components/BreadCrumb";
 
 export default {
-  components: { SideNavMenu }
+  components: { SideNavMenu, BreadCrumb }
 };
 </script>
 
@@ -37,5 +41,11 @@ export default {
 
 .main {
   padding: 20px;
+}
+
+.breadcrumbContainer {
+  height: 30px;
+  display: flex;
+  align-items: center;
 }
 </style>
