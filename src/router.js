@@ -182,6 +182,11 @@ export default new Router({
           path: "/Clipboard",
           name: "Clipboard",
           component: () => import("./views/plugins/Clipboard")
+        },
+        {
+          path: "/RichText",
+          name: "RichText",
+          component: () => import("./views/plugins/RichText")
         }
       ]
     },
