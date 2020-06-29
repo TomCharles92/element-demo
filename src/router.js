@@ -285,6 +285,18 @@ export default new Router({
           component: () => import("./views/new-js-knowledge/ScrollToTarget")
         }
       ]
+    },
+    {
+      path: "ElementComponents",
+      name: "Element组件",
+      component: () => import("./views/element-components/index"),
+      children: [
+        {
+          path: "/InfiniteScroll",
+          name: "InfiniteScroll",
+          component: () => import("./views/element-components/InfiniteScroll")
+        }
+      ]
     }
   ]
 });
